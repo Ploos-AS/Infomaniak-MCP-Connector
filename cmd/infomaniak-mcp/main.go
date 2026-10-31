@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+ "context"
+ "log"
+ mcpserver "github.com/Ploos-AS/Infomaniak-MCP-Connector/internal/mcp"
+)
 
 func main() {
-	fmt.Println("Infomaniak MCP Connector: bootstrap only; MCP transport and API integrations not yet implemented")
+ if err := mcpserver.Run(context.Background()); err != nil {
+  log.Fatal(err)
+ }
 }
